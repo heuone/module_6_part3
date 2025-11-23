@@ -2,7 +2,7 @@ name: CI/CD Pipeline
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "master" ]
   workflow_dispatch:
 
 permissions:
@@ -15,10 +15,10 @@ concurrency:
 
 env:
   REGISTRY: ghcr.io
-  # list all the docker file in your repository here and reference the parent/main branch
+  # list all the docker file in your repository here and reference the parent/master branch
 
   SERVICES: backend,transactions,studentportfolio,syncer
-  TARGET_BRANCH: main
+  TARGET_BRANCH: master
  # Declaring the jobs that we want our runner to run. We want it to build and push the images to our gitops repo
 jobs:
   build-and-push:
